@@ -1,0 +1,13 @@
+{
+  "plugin.name": "Page builder",
+  "builder.title": "Page builder",
+  "builder.subtitle": "Click anything on your site to edit the content behind it",
+  "builder.openInContentManager": "Open in Content Manager",
+  "builder.save": "Save",
+  "builder.publish": "Publish",
+  "builder.refresh": "Refresh",
+  "builder.mode.edit": "Edit",
+  "builder.mode.browse": "Browse",
+  "setup.title": "No front end configured",
+  "setup.body": "Set frontendUrl in config/plugins.ts, then add the bridge script to your site."
+}

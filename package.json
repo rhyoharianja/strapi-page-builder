@@ -1,0 +1,107 @@
+{
+  "name": "strapi-page-builder",
+  "version": "0.1.0",
+  "description": "Click-to-edit visual editing for any front end, from inside Strapi",
+  "author": "Suryo Galih Kencana Harianja <harianja.suryo@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhyoharianja/strapi-page-builder.git"
+  },
+  "homepage": "https://github.com/rhyoharianja/strapi-page-builder#readme",
+  "bugs": {
+    "url": "https://github.com/rhyoharianja/strapi-page-builder/issues"
+  },
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "page-builder",
+    "visual-editing",
+    "page-builder",
+    "live-preview"
+  ],
+  "type": "commonjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./shared": {
+      "types": "./dist/shared/index.d.ts",
+      "source": "./shared/index.ts",
+      "require": "./dist/shared/index.js",
+      "import": "./dist/shared/index.js",
+      "default": "./dist/shared/index.js"
+    },
+    "./bridge": "./bridge/bridge.js",
+    "./strapi-admin": {
+      "types": "./dist/admin/src/index.d.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "bridge",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "strapi-plugin build && tsc -p shared/tsconfig.build.json",
+    "prepublishOnly": "pnpm run build",
+    "dev": "strapi-plugin watch",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify",
+    "lint": "tsc -p admin/tsconfig.json --noEmit && tsc -p server/tsconfig.json --noEmit",
+    "clean": "rimraf dist .turbo",
+    "test:ts:front": "tsc -p admin/tsconfig.json",
+    "test:ts:back": "tsc -p server/tsconfig.json"
+  },
+  "devDependencies": {
+    "@strapi/admin": "^5.52.3",
+    "@strapi/design-system": "^2.2.4",
+    "@strapi/icons": "^2.2.4",
+    "@strapi/sdk-plugin": "^6.1.1",
+    "@strapi/strapi": "^5.52.3",
+    "@strapi/typescript-utils": "^5.52.3",
+    "@strapi/utils": "^5.53.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "prettier": "^3.9.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intl": "^6.8.9",
+    "react-router-dom": "^6.30.6",
+    "rimraf": "^6.0.1",
+    "styled-components": "^6.5.3",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@strapi/admin": "^5.52.3",
+    "@strapi/design-system": "^2.2.4",
+    "@strapi/icons": "^2.2.4",
+    "@strapi/strapi": "^5.52.3",
+    "@strapi/utils": "^5.52.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intl": "^6.8.9",
+    "react-router-dom": "^6.30.6",
+    "styled-components": "^6.5.3"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "page-builder",
+    "displayName": "Page builder",
+    "description": "Click-to-edit visual editing for any front end"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
