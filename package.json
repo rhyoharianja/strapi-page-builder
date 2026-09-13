@@ -1,6 +1,6 @@
 {
   "name": "strapi-page-builder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Click-to-edit visual editing for any front end, from inside Strapi",
   "author": "Suryo Galih Kencana Harianja <harianja.suryo@gmail.com>",
   "license": "MIT",
