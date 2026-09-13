@@ -1,5 +1,7 @@
 # strapi-page-builder
 
+[![npm](https://img.shields.io/npm/v/strapi-page-builder?logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/strapi-page-builder) ![license MIT](https://img.shields.io/badge/license-MIT-3DA639) ![Strapi 5](https://img.shields.io/badge/Strapi-5-4945FF?logo=strapi&logoColor=white) ![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white) ![React 18](https://img.shields.io/badge/React-18-20232A?logo=react&logoColor=white) ![zero runtime dependencies](https://img.shields.io/badge/runtime_deps-0-2F2F2F) ![postMessage bridge](https://img.shields.io/badge/bridge-postMessage-6E56CF)
+
 Click anything on your site, edit the Strapi content behind it, save, publish.
 
 The site is loaded **by URL** into an iframe inside the Strapi admin. It does not matter what
@@ -16,6 +18,22 @@ tag, and it is the same bargain Directus, Sanity and Netlify's page builders all
 It is also **not** a layout builder. Blocks in a dynamic zone can be dragged, added and removed
 (see below), but nesting, columns and page structure have nowhere to live in a dynamic zone —
 that is a layout JSON field, i.e. `strapi-plugin-puck`.
+
+## Tech stack
+
+| | |
+| --- | --- |
+| **Strapi 5** (`^5.52`) | Peer, not a dependency. The plugin registers against the admin and server runtimes the host already has |
+| **TypeScript 5.9** | Admin, server and the shared contract. The bridge is the exception — see below |
+| **React 18** + `@strapi/design-system` 2 | The builder screen is built from Strapi's own components, so it inherits the panel's theme instead of fighting it |
+| **`bridge/bridge.js`** — plain ES5, no build | Runs inside *your* site, not the admin. It must load in whatever a visitor's browser is, without a bundler and without assuming a module system |
+| **`postMessage`** | The only channel between admin and site. Origin-locked after the handshake |
+| **No runtime dependencies** | `dependencies` is empty. Everything it needs is a peer the host already installs, so adding this plugin adds nothing to your lockfile |
+
+The shared entry point (`strapi-page-builder/shared`) imports no Strapi, React or DOM code at
+all — it is safe in any front-end bundle, including one that has never heard of Strapi.
+
+---
 
 ## Install
 
@@ -427,6 +445,16 @@ question:
 - A block chosen by index is usually below the fold on a page of full-height sections, so the
   drag aimed at a coordinate belonging to nothing.
 
+## Support
+
+These plugins are free and MIT-licensed. If one saved you a day of work, you are welcome to
+say thanks:
+
+[![PayPal](https://img.shields.io/badge/PayPal-donate-00457C?logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/sgkharianja)
+[![Saweria](https://img.shields.io/badge/Saweria-dukung-FF5C5C?logo=buymeacoffee&logoColor=white)](https://saweria.co/rhioharianja)
+
+Bug reports and pull requests are worth just as much.
+
 ## License
 
-MIT
+MIT © Suryo Galih Kencana Harianja
