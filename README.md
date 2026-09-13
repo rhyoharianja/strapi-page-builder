@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/strapi-page-builder?logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/strapi-page-builder) ![license MIT](https://img.shields.io/badge/license-MIT-3DA639) ![Strapi 5](https://img.shields.io/badge/Strapi-5-4945FF?logo=strapi&logoColor=white) ![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white) ![React 18](https://img.shields.io/badge/React-18-20232A?logo=react&logoColor=white) ![zero runtime dependencies](https://img.shields.io/badge/runtime_deps-0-2F2F2F) ![postMessage bridge](https://img.shields.io/badge/bridge-postMessage-6E56CF)
 
+[![PayPal](https://img.shields.io/badge/PayPal-donate-00457C?logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/sgkharianja) [![Saweria](https://img.shields.io/badge/Saweria-dukung-FF5C5C?logo=buymeacoffee&logoColor=white)](https://saweria.co/rhioharianja)
+
 Click anything on your site, edit the Strapi content behind it, save, publish.
 
 The site is loaded **by URL** into an iframe inside the Strapi admin. It does not matter what
